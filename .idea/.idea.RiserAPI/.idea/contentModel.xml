@@ -35,7 +35,7 @@
               <e p="IAircraftRepository.cs" t="Include" />
               <e p="IBaseJumpRepository.cs" t="Include" />
               <e p="ICommentRepository.cs" t="Include" />
-              <e p="IGearRepository.cs" t="Include" />
+              <e p="IGearItemRepository.cs" t="Include" />
               <e p="IImageRepository.cs" t="Include" />
               <e p="IJumpRepository.cs" t="Include" />
               <e p="IRigRepository.cs" t="Include" />

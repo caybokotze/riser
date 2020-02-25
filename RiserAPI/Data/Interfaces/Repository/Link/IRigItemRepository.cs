@@ -1,8 +1,9 @@
-﻿using RiserAPI.Models.Link;
+﻿
+using RiserAPI.Models.Link.Gear;
 
 namespace RiserAPI.Data.Interfaces.Repository.Link
 {
-    public interface IRigItemRepository : IRepository<RigItem>
+    public interface IRigItemRepository : IRepository<RigCollection>
     {
         
     }

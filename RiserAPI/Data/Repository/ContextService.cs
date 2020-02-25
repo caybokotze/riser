@@ -19,6 +19,6 @@ namespace RiserAPI.Data.Repository
             _context.Dispose();
         }
 
-        public IGearRepository GearItems { get; }
+        public IGearItemRepository GearItems { get; }
     }
 }

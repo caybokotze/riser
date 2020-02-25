@@ -4,7 +4,7 @@ using RiserAPI.Models.Gear;
 
 namespace RiserAPI.Data.Repository.Models
 {
-    public class GearItemRepository : Repository<GearItem>, IGearRepository
+    public class GearItemRepository : Repository<GearItem>, IGearItemRepository
     {
         public GearItemRepository(ApplicationDbContext context) : base(context)
         {
