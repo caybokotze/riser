@@ -6,7 +6,7 @@ namespace RiserAPI.Models.Jump
     {
         [Display(Name = "Skydive Type")]
         public string Name { get; set; }
-        //Skydive
+        //Skydive is already configured from skydive.
         public Skydive Skydive { get; set; }
     }
 }

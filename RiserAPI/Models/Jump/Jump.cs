@@ -29,20 +29,19 @@ namespace RiserAPI.Models.Jump
 
         #region Navigations
         //User
-        [ForeignKey("User")]
         public int UserId { get; set; }
         public User.User User { get; set; }
         //JumpType
         [ForeignKey("JumpType")]
         public int JumpTypeId { get; set; }
         public JumpType JumpType { get; set; }
-        //Sign Off Request
+        //Sign Off Request already configured.
         public SignOffRequest SignOffRequest { get; set; }
-        //Tunnel Session
+        //Tunnel Session already configured from TunnelSession.
         public TunnelSession TunnelSession { get; set; }
-        //Base Jump
+        //Base Jump already configured from base jump.
         public BaseJump BaseJump { get; set; }
-        //Skydive
+        //Skydive already configured from skydive.
         public Skydive Skydive { get; set; }
         //Jump Participants
         public IEnumerable<JumpParticipant> JumpParticipants { get; set; }
@@ -70,6 +69,7 @@ namespace RiserAPI.Models.Jump
             builder.HasOne(k => k.JumpType)
                 .WithOne(w => w.Jump)
                 .HasForeignKey<Jump>(f => f.JumpTypeId);
+            //Note: Jump has one tunnel session.
             //Todo: BaseJump, Skydive and have One to type Jump.
         }
     }

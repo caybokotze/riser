@@ -1,11 +1,14 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace RiserAPI.Models.Link.Gear
 {
-    public class RigItemType
+    public class RigItemType : Base
     {
-        
+        [Required]
+        [Display(Name = "Rig Item type name")]
+        public string Name { get; set; }
     }
     
     public class RigItemTypeConfiguration : IEntityTypeConfiguration<RigItemType>
@@ -14,7 +17,7 @@ namespace RiserAPI.Models.Link.Gear
         {
             builder.HasKey(k => new
             {
-                
+                k.Id
             });
             
         }

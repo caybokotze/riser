@@ -14,7 +14,7 @@ namespace RiserAPI.Models.Jump
         
         public float Height { get; set; }
         public int JumpId { get; set; }
-        public Models.Jump.Jump Jump { get; set; }
+        public Jump Jump { get; set; }
         //
         public string TunnelName { get; set; }
     }
@@ -23,6 +23,8 @@ namespace RiserAPI.Models.Jump
     {
         public void Configure(EntityTypeBuilder<TunnelSession> builder)
         {
+            builder.HasKey(k => k.Id);
+            //
             builder.HasOne(h => h.Jump)
                 .WithOne(w => w.TunnelSession)
                 .HasForeignKey<TunnelSession>(fk => fk.JumpId);

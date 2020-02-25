@@ -6,7 +6,7 @@ namespace RiserAPI.Models.Jump
     {
         [StringLength(25)]
         public string Name { get; set; }
-        //user
+        //Jump already configured from jump.
         public Jump Jump { get; set; }
     }
 }

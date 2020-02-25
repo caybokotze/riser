@@ -93,7 +93,6 @@
             <e p="JumpType.cs" t="Include" />
             <e p="Malfunction.cs" t="Include" />
             <e p="MalfunctionType.cs" t="Include" />
-            <e p="SignOffRequest.cs" t="Include" />
             <e p="Skydive.cs" t="Include" />
             <e p="SkydiveDiscipline.cs" t="Include" />
             <e p="SkydiveType.cs" t="Include" />
@@ -110,6 +109,7 @@
               <e p="JumpImage.cs" t="Include" />
               <e p="JumpMalfunction.cs" t="Include" />
               <e p="JumpParticipant.cs" t="Include" />
+              <e p="SignOffRequest.cs" t="Include" />
             </e>
             <e p="Store" t="Include">
               <e p="GearSaleImage.cs" t="Include" />

@@ -1,7 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using RiserAPI.Models.Gear;
+using RiserAPI.Models.Link.Jump;
 
 namespace RiserAPI.Models.Jump
 {
@@ -70,7 +72,6 @@ namespace RiserAPI.Models.Jump
             builder.HasOne(h => h.SkydiveDiscipline)
                 .WithOne(o => o.Skydive)
                 .HasForeignKey<Skydive>(fk => fk.DisciplineId);
-            //Note: One skydive can have many malfunctions.
         }
     }
 }

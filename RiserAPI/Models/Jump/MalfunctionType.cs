@@ -6,7 +6,7 @@ namespace RiserAPI.Models.Jump
     {
         [Display(Name = "Malfunction Type")]
         public int Name { get; set; }
-        //
+        //Malfunction already configured from malfunction.
         public Malfunction Malfunction { get; set; }
     }
 }

@@ -6,7 +6,7 @@
     public class SkydiveDiscipline : Base
     {
         public string Name { get; set; }
-
+        //Skydive is already configured from skydive.
         public Skydive Skydive { get; set; }
     }
 }

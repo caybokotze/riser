@@ -4,16 +4,16 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace RiserAPI.Models.Jump
 {
-    public class SignOffRequest : Base
+    public class SignOffRequest
     {
         //Jump
         public int JumpId { get; set; }
         public Models.Jump.Jump Jump { get; set; }
         //Participant
-        public int FromParticipant { get; set; }
+        public int FromParticipantId { get; set; }
         public User.User FromUser { get; set; }
         //Participant
-        public int ToParticipant { get; set; }
+        public int ToParticipantId { get; set; }
         public User.User ToUser { get; set; }
         //
         public DateTime Date { get; set; }
@@ -23,7 +23,12 @@ namespace RiserAPI.Models.Jump
     {
         public void Configure(EntityTypeBuilder<SignOffRequest> builder)
         {
-            builder.HasKey(k => k.Id);
+            builder.HasKey(k => new
+            {
+                k.JumpId,
+                k.FromParticipantId,
+                k.ToParticipantId
+            });
             //Map One to One => Jump > SignOff.
             builder.HasOne(h => h.Jump)
                 .WithOne(o => o.SignOffRequest)
@@ -31,11 +36,11 @@ namespace RiserAPI.Models.Jump
             //Map One to One => From User.
             builder.HasOne(h => h.FromUser)
                 .WithOne(w => w.SignOffRequest)
-                .HasForeignKey<SignOffRequest>(f => f.FromParticipant);
+                .HasForeignKey<SignOffRequest>(f => f.FromParticipantId);
             //Map One to One => To User.
             builder.HasOne(h => h.ToUser)
                 .WithOne(w => w.SignOffRequest)
-                .HasForeignKey<SignOffRequest>(f => f.ToParticipant);
+                .HasForeignKey<SignOffRequest>(f => f.ToParticipantId);
             
         }
     }

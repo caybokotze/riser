@@ -36,7 +36,6 @@ namespace RiserAPI.Models.Jump
             builder.HasOne(h => h.MalfunctionType)
                 .WithOne(o => o.Malfunction)
                 .HasForeignKey<Malfunction>(fk => fk.MalfunctionTypeId);
-            
         }
     }
 }
