@@ -23,6 +23,14 @@ namespace RiserAPI.Models.Link.User
                 k.ImageId,
                 k.UserId
             });
+
+            builder.HasOne(o => o.Image)
+                .WithMany(m => m.UserImages)
+                .HasForeignKey(fk => fk.ImageId);
+            //
+            builder.HasOne(o => o.User)
+                .WithMany(m => m.UserImages)
+                .HasForeignKey(fk => fk.UserId);
         }
     }
 }

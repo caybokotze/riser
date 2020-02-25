@@ -68,6 +68,8 @@ namespace RiserAPI.Models.User
         public IEnumerable<UserImage> Images { get; set; }
         //User Gear Items
         public IEnumerable<UserGear> UserGearItems { get; set; }
+
+        public IEnumerable<UserImage> UserImages { get; set; }
         #endregion
 
     }

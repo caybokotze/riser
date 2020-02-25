@@ -2,6 +2,7 @@
 using RiserAPI.Models.Link.Gear;
 using RiserAPI.Models.Link.Jump;
 using RiserAPI.Models.Link.Store;
+using RiserAPI.Models.Link.User;
 
 namespace RiserAPI.Models.Gear
 {
@@ -15,6 +16,7 @@ namespace RiserAPI.Models.Gear
         public IEnumerable<GearImage> GearImages { get; set; }
         public IEnumerable<GearSaleImage> GearSaleImages { get; set; }
         public IEnumerable<JumpImage> JumpImages { get; set; }
+        public IEnumerable<UserImage> UserImages { get; set; }
         #endregion
     }
 }
