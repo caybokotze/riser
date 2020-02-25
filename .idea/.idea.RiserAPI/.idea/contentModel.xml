@@ -46,7 +46,6 @@
               <e p="IUserRepository.cs" t="Include" />
               <e p="Link" t="Include">
                 <e p="IGearImageRepository.cs" t="Include" />
-                <e p="IJumpGearRepository.cs" t="Include" />
                 <e p="IJumpParticipantRepository.cs" t="Include" />
                 <e p="IRigItemRepository.cs" t="Include" />
               </e>
@@ -104,6 +103,7 @@
             <e p="Gear" t="Include">
               <e p="GearImage.cs" t="Include" />
               <e p="RigCollection.cs" t="Include" />
+              <e p="RigItemType.cs" t="Include" />
             </e>
             <e p="Jump" t="Include">
               <e p="JumpGearItem.cs" t="Include" />

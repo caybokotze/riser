@@ -4,7 +4,10 @@ using System.Globalization;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using RiserAPI.Data;
+using RiserAPI.Data.Interfaces;
+using RiserAPI.Data.Repository;
 using RiserAPI.Models;
+using RiserAPI.Models.Jump;
 
 namespace RiserAPI.Controllers
 {
@@ -13,7 +16,8 @@ namespace RiserAPI.Controllers
     public class AircraftController : ControllerBase
     {
         private ApplicationDbContext _context;
-        public AircraftController()
+        //private IContextService _context;
+        public AircraftController(/*IContextService context*/)
         {
             _context = new ApplicationDbContext();
         }
@@ -22,7 +26,7 @@ namespace RiserAPI.Controllers
         [Route("all")]
         public IActionResult Get()
         {
-            return Ok(_context.Aircrafts.ToList());
+            return Ok(_context.Aircraft);
         }
         
         [HttpGet("{id}")]
@@ -30,7 +34,7 @@ namespace RiserAPI.Controllers
         {
             if (id != 0)
             {
-                return Ok(_context.Aircrafts.Find(id));
+                return Ok(_context.Aircraft.Get(id));
             }
             return BadRequest();
         }
@@ -40,7 +44,7 @@ namespace RiserAPI.Controllers
         {
             if (ModelState.IsValid)
             {
-                return Ok(_context.Aircrafts.Add(aircraft));
+                return Ok(_context.Aircraft.Add(aircraft));
             }
 
             return BadRequest();

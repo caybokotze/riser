@@ -26,9 +26,10 @@ namespace RiserAPI.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new JumpConfiguration());
+            modelBuilder.ApplyConfiguration(new GearItemConfiguration());
         }
 
-        public DbSet<Aircraft> Aircrafts { get; set; }
+        public DbSet<Aircraft> Aircraft { get; set; }
         public DbSet<Base> Bases { get; set; }
         public DbSet<BaseJump> BaseJumps { get; set; }
         public DbSet<Comment> Comments { get; set; }
@@ -49,9 +50,8 @@ namespace RiserAPI.Data
         
         #region Linking Table
         public DbSet<GearImage> GearImages { get; set; }
-        public DbSet<JumpGear> JumpGears { get; set; }
         public DbSet<JumpParticipant> JumpParticipants { get; set; }
-        public DbSet<RigItem> RigItems { get; set; }
+        public DbSet<RigCollection> RigCollections { get; set; }
         #endregion
     }
 }

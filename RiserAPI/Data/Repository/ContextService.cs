@@ -13,6 +13,7 @@ namespace RiserAPI.Data.Repository
         {
             _context = context;
             GearItems = new GearItemRepository(_context);
+            Aircraft = new AircraftRepository(_context);
         }
         public void Dispose()
         {
@@ -20,5 +21,6 @@ namespace RiserAPI.Data.Repository
         }
 
         public IGearItemRepository GearItems { get; }
+        public IAircraftRepository Aircraft { get; }
     }
 }

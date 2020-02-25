@@ -15,15 +15,5 @@ namespace RiserAPI.Data.Repository.Models
         }
 
         public ApplicationDbContext ApplicationDbContext => Context;
-
-        public IEnumerable<Aircraft> GetAllAircraft()
-        {
-            return Context.Aircrafts.ToList();
-        }
-        
-        public IEnumerable<Aircraft> GetAllAircraft(int aircraftId)
-        {
-            return Context.Aircrafts.Where(w => w.Id == aircraftId).ToList();
-        }
     }
 }

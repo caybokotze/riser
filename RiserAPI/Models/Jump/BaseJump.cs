@@ -35,7 +35,6 @@ namespace RiserAPI.Models.Jump
         //Jump
         public int JumpId { get; set; }
         public Jump Jump { get; set; }
-
         public int BaseJumpTypeId { get; set; }
         public BaseJumpType BaseJumpType { get; set; }
         
@@ -52,6 +51,10 @@ namespace RiserAPI.Models.Jump
             builder.HasOne(h => h.Rig)
                 .WithMany(m => m.BaseJumps)
                 .HasForeignKey(fk => fk.RigId);
+            //Note: Base Jump has one Jump associated with it.
+            builder.HasOne(o => o.Jump)
+                .WithOne(o => o.BaseJump)
+                .HasForeignKey<BaseJump>(fk => fk.JumpId);
             //Note: One Base Jump has one BaseJumpType.
             builder.HasOne(h => h.BaseJumpType)
                 .WithOne(o => o.BaseJump)
