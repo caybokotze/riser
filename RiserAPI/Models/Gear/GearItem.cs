@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using RiserAPI.Models.Link.Gear;
 using RiserAPI.Models.Link.Jump;
 using RiserAPI.Models.Link.Store;
+using RiserAPI.Models.Link.User;
 using RiserAPI.Models.User;
 
 namespace RiserAPI.Models.Gear
@@ -30,6 +31,7 @@ namespace RiserAPI.Models.Gear
         public IEnumerable<JumpGearItem> JumpGearItems { get; set; }
         public IEnumerable<GearImage> GearImages { get; set; }
         public IEnumerable<GearSaleImage> GearSaleImages { get; set; }
+        public IEnumerable<UserGear> UserGearItems { get; set; }
         
         [ForeignKey("GearType")]
         public int GearTypeId { get; set; }

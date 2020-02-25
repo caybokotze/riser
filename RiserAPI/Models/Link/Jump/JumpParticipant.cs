@@ -23,6 +23,14 @@ namespace RiserAPI.Models.Link.Jump
                 k.UserId,
                 k.JumpId
             });
+
+            builder.HasOne(o => o.User)
+                .WithMany(m => m.JumpParticipants)
+                .HasForeignKey(fk => fk.UserId);
+
+            builder.HasOne(o => o.Jump)
+                .WithMany(m => m.JumpParticipants)
+                .HasForeignKey(fk => fk.JumpId);
         }
     }
 }

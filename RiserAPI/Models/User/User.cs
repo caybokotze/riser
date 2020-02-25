@@ -66,6 +66,8 @@ namespace RiserAPI.Models.User
         public SignOffRequest SignOffRequest { get; set; }
         //Images
         public IEnumerable<UserImage> Images { get; set; }
+        //User Gear Items
+        public IEnumerable<UserGear> UserGearItems { get; set; }
         #endregion
 
     }
