@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\kotze\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\kotze\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_RiserAPI.-724429253.00" t="ExcludeRecursive" />
+    <e p="C:\Users\kotze\OneDrive\Development\Visual Studio\2020\RiserAPI" t="IncludeFlat">
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="RiserAPI" t="IncludeRecursive">
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Controllers" t="Include">
+          <e p="AircraftController.cs" t="Include" />
+          <e p="BaseJumpController.cs" t="Include" />
+          <e p="CommentController.cs" t="Include" />
+          <e p="GearController.cs" t="Include" />
+          <e p="ImageController.cs" t="Include" />
+          <e p="JumpController.cs" t="Include" />
+          <e p="RigController.cs" t="Include" />
+          <e p="SaleController.cs" t="Include" />
+          <e p="SettingController.cs" t="Include" />
+          <e p="SkydiveController.cs" t="Include" />
+          <e p="TunnelController.cs" t="Include" />
+          <e p="UserController.cs" t="Include" />
+          <e p="WeatherForecastController.cs" t="Include" />
+        </e>
+        <e p="Data" t="Include">
+          <e p="ApplicationDbContext.cs" t="Include" />
+          <e p="Dto" t="Include" />
+          <e p="Interfaces" t="Include">
+            <e p="IAuthService.cs" t="Include" />
+            <e p="IContextService.cs" t="Include" />
+            <e p="IRepository.cs" t="Include" />
+            <e p="Repository" t="Include">
+              <e p="IAircraftRepository.cs" t="Include" />
+              <e p="IBaseJumpRepository.cs" t="Include" />
+              <e p="ICommentRepository.cs" t="Include" />
+              <e p="IGearRepository.cs" t="Include" />
+              <e p="IImageRepository.cs" t="Include" />
+              <e p="IJumpRepository.cs" t="Include" />
+              <e p="IRigRepository.cs" t="Include" />
+              <e p="ISaleRepository.cs" t="Include" />
+              <e p="ISettingRepository.cs" t="Include" />
+              <e p="ISkydiveRepository.cs" t="Include" />
+              <e p="ITunnelRepository.cs" t="Include" />
+              <e p="IUserRepository.cs" t="Include" />
+              <e p="Link" t="Include">
+                <e p="IGearImageRepository.cs" t="Include" />
+                <e p="IJumpGearRepository.cs" t="Include" />
+                <e p="IJumpParticipantRepository.cs" t="Include" />
+                <e p="IRigItemRepository.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Repository" t="Include">
+            <e p="AuthService.cs" t="Include" />
+            <e p="ContextService.cs" t="Include" />
+            <e p="Models" t="Include">
+              <e p="AircraftRepository.cs" t="Include" />
+              <e p="GearItemRepository.cs" t="Include" />
+              <e p="Link" t="Include" />
+            </e>
+            <e p="Repository.cs" t="Include" />
+          </e>
+        </e>
+        <e p="DI" t="Include">
+          <e p="Injector.cs" t="Include" />
+        </e>
+        <e p="Enum" t="Include">
+          <e p="Unit.cs" t="Include" />
+        </e>
+        <e p="Extentions" t="Include">
+          <e p="AppSettings.cs" t="Include" />
+          <e p="ExtensionMethods.cs" t="Include" />
+        </e>
+        <e p="Interfaces" t="Include">
+          <e p="Base.cs" t="Include" />
+          <e p="Repository" t="Include" />
+        </e>
+        <e p="Models" t="Include">
+          <e p="Base.cs" t="Include" />
+          <e p="Gear" t="Include">
+            <e p="GearItem.cs" t="Include" />
+            <e p="GearType.cs" t="Include" />
+            <e p="Image.cs" t="Include" />
+            <e p="Rig.cs" t="Include" />
+            <e p="RigItemType.cs" t="Include" />
+          </e>
+          <e p="Jump" t="Include">
+            <e p="Aircraft.cs" t="Include" />
+            <e p="BaseJump.cs" t="Include" />
+            <e p="BaseJumpType.cs" t="Include" />
+            <e p="Jump.cs" t="Include" />
+            <e p="JumpType.cs" t="Include" />
+            <e p="Malfunction.cs" t="Include" />
+            <e p="MalfunctionType.cs" t="Include" />
+            <e p="SignOffRequest.cs" t="Include" />
+            <e p="Skydive.cs" t="Include" />
+            <e p="SkydiveDiscipline.cs" t="Include" />
+            <e p="SkydiveType.cs" t="Include" />
+            <e p="TunnelSession.cs" t="Include" />
+          </e>
+          <e p="Link" t="Include">
+            <e p="Gear" t="Include">
+              <e p="GearImage.cs" t="Include" />
+              <e p="RigCollection.cs" t="Include" />
+            </e>
+            <e p="Jump" t="Include">
+              <e p="JumpGearItem.cs" t="Include" />
+              <e p="JumpImage.cs" t="Include" />
+              <e p="JumpMalfunction.cs" t="Include" />
+              <e p="JumpParticipant.cs" t="Include" />
+            </e>
+            <e p="Store" t="Include">
+              <e p="GearSaleImage.cs" t="Include" />
+              <e p="ListedGearItem.cs" t="Include" />
+            </e>
+            <e p="User" t="Include">
+              <e p="UserGear.cs" t="Include" />
+              <e p="UserImage.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Store" t="Include">
+            <e p="PurchaseInfo.cs" t="Include" />
+            <e p="Sale.cs" t="Include" />
+            <e p="SaleListing.cs" t="Include" />
+          </e>
+          <e p="User" t="Include">
+            <e p="Comment.cs" t="Include" />
+            <e p="LicenseType.cs" t="Include" />
+            <e p="Setting.cs" t="Include" />
+            <e p="User.cs" t="Include" />
+          </e>
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="RiserAPI.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="RiserAPI.csproj" t="IncludeRecursive" />
+        <e p="Startup.cs" t="Include" />
+        <e p="ViewModels" t="Include" />
+        <e p="WeatherForecast.cs" t="Include" />
+      </e>
+      <e p="RiserAPI.sln" t="IncludeFlat" />
+    </e>
+  </component>
+</project>
