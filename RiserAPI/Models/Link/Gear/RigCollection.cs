@@ -17,7 +17,7 @@ namespace RiserAPI.Models.Link.Gear
         public GearItem GearItem { get; set; }
     }
     
-    public class RigItemConfiguration : IEntityTypeConfiguration<RigCollection>
+    public class RigCollectionConfiguration : IEntityTypeConfiguration<RigCollection>
     {
         public void Configure(EntityTypeBuilder<RigCollection> builder)
         {

@@ -10,6 +10,8 @@ using RiserAPI.Models.Jump;
 using RiserAPI.Models.Link;
 using RiserAPI.Models.Link.Gear;
 using RiserAPI.Models.Link.Jump;
+using RiserAPI.Models.Link.Store;
+using RiserAPI.Models.Link.User;
 using RiserAPI.Models.Store;
 using RiserAPI.Models.User;
 
@@ -26,9 +28,40 @@ namespace RiserAPI.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new GearItemConfiguration());
-            
+            modelBuilder.ApplyConfiguration(new GearTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new ImageConfiguration());
+            modelBuilder.ApplyConfiguration(new RigConfiguration());
+            modelBuilder.ApplyConfiguration(new RigItemTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new AircraftConfiguration());
+            modelBuilder.ApplyConfiguration(new BaseJumpConfiguration());
+            modelBuilder.ApplyConfiguration(new BaseJumpTypeConfiguration());
             modelBuilder.ApplyConfiguration(new JumpConfiguration());
-            modelBuilder.ApplyConfiguration(new GearItemConfiguration());
+            modelBuilder.ApplyConfiguration(new JumpTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new MalfunctionConfiguration());
+            modelBuilder.ApplyConfiguration(new SkydiveConfiguration());
+            modelBuilder.ApplyConfiguration(new SkydiveDisciplineConfiguration());
+            modelBuilder.ApplyConfiguration(new SkydiveTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new TunnelSessionConfiguration());
+            modelBuilder.ApplyConfiguration(new GearImageConfiguration());
+            modelBuilder.ApplyConfiguration(new RigCollectionConfiguration());
+            modelBuilder.ApplyConfiguration(new RigItemTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new JumpGearConfiguration());
+            modelBuilder.ApplyConfiguration(new JumpImageConfiguration());
+            modelBuilder.ApplyConfiguration(new JumpMalfunctionConfiguration());
+            modelBuilder.ApplyConfiguration(new JumpParticipantConfiguration());
+            modelBuilder.ApplyConfiguration(new SignOffConfiguration());
+            modelBuilder.ApplyConfiguration(new GearSaleImageConfiguration());
+            modelBuilder.ApplyConfiguration(new ListedGearConfiguration());
+            modelBuilder.ApplyConfiguration(new UserGearConfiguration());
+            modelBuilder.ApplyConfiguration(new UserImageConfiguration());
+            modelBuilder.ApplyConfiguration(new PurchaseInfoConfiguration());
+            modelBuilder.ApplyConfiguration(new SaleConfiguration());
+            modelBuilder.ApplyConfiguration(new SaleListingConfiguration());
+            modelBuilder.ApplyConfiguration(new CommentConfiguration());
+            //todo: licensetypeconfiguration
+            modelBuilder.ApplyConfiguration(new SettingConfiguration());
+            modelBuilder.ApplyConfiguration(new UserConfiguration());
+           
         }
 
         public DbSet<Aircraft> Aircraft { get; set; }
