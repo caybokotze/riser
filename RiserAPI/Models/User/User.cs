@@ -5,6 +5,7 @@ using RiserAPI.Models.Gear;
 using RiserAPI.Models.Jump;
 using RiserAPI.Models.Link.Jump;
 using RiserAPI.Models.Link.User;
+using RiserAPI.Models.Store;
 
 namespace RiserAPI.Models.User
 {
@@ -70,6 +71,8 @@ namespace RiserAPI.Models.User
         public IEnumerable<UserGear> UserGearItems { get; set; }
 
         public IEnumerable<UserImage> UserImages { get; set; }
+
+        public IEnumerable<Sale> Sales { get; set; }
         #endregion
 
     }

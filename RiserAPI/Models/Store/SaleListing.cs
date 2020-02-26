@@ -19,5 +19,6 @@ namespace RiserAPI.Models.Store
 
         public IEnumerable<ListedGearItem> ListedGearItems { get; set; }
         public IEnumerable<GearSaleImage> GearSaleImages { get; set; }
+        public IEnumerable<Sale> Sales { get; set; }
     }
 }

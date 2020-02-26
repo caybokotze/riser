@@ -1,4 +1,7 @@
-﻿namespace RiserAPI.Models.Store
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+
+namespace RiserAPI.Models.Store
 {
     public class Sale : Base
     {
@@ -15,5 +18,29 @@
         //Sale Listing
         public int SaleListingId { get; set; }
         public SaleListing SaleListing { get; set; }
+    }
+    
+    public class SaleConfiguration : IEntityTypeConfiguration<Sale>
+    {
+        public void Configure(EntityTypeBuilder<Sale> builder)
+        {
+            builder.HasKey(k => k.Id);
+            //Buyer
+            builder.HasOne(o => o.ToUser)
+                .WithMany(m => m.Sales)
+                .HasForeignKey(fk => fk.ToUserId);
+            //Seller
+            builder.HasOne(o => o.FromUser)
+                .WithMany(m => m.Sales)
+                .HasForeignKey(fk => fk.FromUserId);
+            //Purchase Info
+            builder.HasOne(o => o.PurchaseInfo)
+                .WithMany(m => m.Sales)
+                .HasForeignKey(fk => fk.PurchaseInfoId);
+            //Sale listing.
+            builder.HasOne(o => o.SaleListing)
+                .WithMany(m => m.Sales)
+                .HasForeignKey(fk => fk.SaleListingId);
+        }
     }
 }
