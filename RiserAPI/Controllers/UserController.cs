@@ -29,14 +29,14 @@ namespace RiserAPI.Controllers
                     Name = "Jessica",
                     Surname = "De Villiers",
                     Email = "jess@gmail.com",
-                    DOB = DateTime.Parse("1996-06-25", new CultureInfo(1))
+                    Dob = DateTime.Parse("1996-06-25", new CultureInfo(1))
                 },
                 new User
                 {
                     Name = "Caybo",
                     Surname = "Kotze",
                     Email = "caybo@gmail.com",
-                    DOB = DateTime.Parse("1996-06-25", new CultureInfo(1))
+                    Dob = DateTime.Parse("1996-06-25", new CultureInfo(1))
                 }
             };
 

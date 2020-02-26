@@ -22,7 +22,7 @@ namespace RiserAPI.Controllers
         
         [HttpGet]
         [Route("user")]
-        public IActionResult GetUserSettings(string userId)
+        public IActionResult GetUserSettings(int? userId)
         {
             if (userId == null) return BadRequest();
             return Ok(_context.Settings.Where(w => w.User.Id == userId));

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using RiserAPI.Models.Gear;
 using RiserAPI.Models.Jump;
 using RiserAPI.Models.Link.Jump;
@@ -75,5 +77,13 @@ namespace RiserAPI.Models.User
         public IEnumerable<Sale> Sales { get; set; }
         #endregion
 
+    }
+    
+    public class UserConfiguration : IEntityTypeConfiguration<User>
+    {
+        public void Configure(EntityTypeBuilder<User> builder)
+        {
+            builder.HasKey(k => k.Id);
+        }
     }
 }

@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using RiserAPI.Data;
 using RiserAPI.Models;
+using RiserAPI.Models.User;
 
 namespace RiserAPI.Controllers
 {

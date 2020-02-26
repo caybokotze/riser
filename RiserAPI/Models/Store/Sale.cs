@@ -25,7 +25,7 @@ namespace RiserAPI.Models.Store
         public void Configure(EntityTypeBuilder<Sale> builder)
         {
             builder.HasKey(k => k.Id);
-            //Buyer
+            //Builder
             builder.HasOne(o => o.ToUser)
                 .WithMany(m => m.Sales)
                 .HasForeignKey(fk => fk.ToUserId);

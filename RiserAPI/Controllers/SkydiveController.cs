@@ -24,7 +24,7 @@ namespace RiserAPI.Controllers
 
         [HttpGet]
         [Route("user")]
-        public IActionResult GetUserSkydives(string userId)
+        public IActionResult GetUserSkydives(int? userId)
         {
             if (userId == null) return BadRequest();
             return Ok(_context.Skydives

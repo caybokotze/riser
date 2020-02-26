@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using RiserAPI.Models.Link.Gear;
 using RiserAPI.Models.Link.Jump;
 using RiserAPI.Models.Link.Store;
@@ -18,5 +20,13 @@ namespace RiserAPI.Models.Gear
         public IEnumerable<JumpImage> JumpImages { get; set; }
         public IEnumerable<UserImage> UserImages { get; set; }
         #endregion
+    }
+    
+    public class ImageConfiguration : IEntityTypeConfiguration<Image>
+    {
+        public void Configure(EntityTypeBuilder<Image> builder)
+        {
+            builder.HasKey(k => k.Id);
+        }
     }
 }

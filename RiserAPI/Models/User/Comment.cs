@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace RiserAPI.Models.User
 {
@@ -15,5 +17,13 @@ namespace RiserAPI.Models.User
         //
         public User User { get; set; }
         public string UserId { get; set; }
+    }
+    
+    public class CommentConfiguration : IEntityTypeConfiguration<Comment>
+    {
+        public void Configure(EntityTypeBuilder<Comment> builder)
+        {
+            builder.HasKey(k => k.Id);
+        }
     }
 }

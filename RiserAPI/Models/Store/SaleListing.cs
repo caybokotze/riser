@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using RiserAPI.Models.Link.Store;
 
 namespace RiserAPI.Models.Store
@@ -20,5 +22,13 @@ namespace RiserAPI.Models.Store
         public IEnumerable<ListedGearItem> ListedGearItems { get; set; }
         public IEnumerable<GearSaleImage> GearSaleImages { get; set; }
         public IEnumerable<Sale> Sales { get; set; }
+    }
+    
+    public class SaleListingConfiguration : IEntityTypeConfiguration<SaleListing>
+    {
+        public void Configure(EntityTypeBuilder<SaleListing> builder)
+        {
+            builder.HasKey(k => k.Id);
+        }
     }
 }

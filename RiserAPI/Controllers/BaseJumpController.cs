@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RiserAPI.Data;
 using RiserAPI.Models;
+using RiserAPI.Models.Jump;
 
 namespace RiserAPI.Controllers
 {

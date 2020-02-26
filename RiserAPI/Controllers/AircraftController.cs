@@ -34,7 +34,7 @@ namespace RiserAPI.Controllers
         {
             if (id != 0)
             {
-                return Ok(_context.Aircraft.Get(id));
+                return Ok(_context.Aircraft.Find(id));
             }
             return BadRequest();
         }

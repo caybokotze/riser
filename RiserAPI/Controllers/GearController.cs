@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Razor.Language.Intermediate;
 using Microsoft.EntityFrameworkCore;
 using RiserAPI.Data;
 using RiserAPI.Models;
+using RiserAPI.Models.Gear;
 
 namespace RiserAPI.Controllers
 {
@@ -34,7 +35,7 @@ namespace RiserAPI.Controllers
         }
 
         [HttpGet]
-        public IActionResult Post([FromBody] Gear gear)
+        public IActionResult Post([FromBody] GearItem gear)
         {
             if (!ModelState.IsValid) return BadRequest();
             _context.Gears.Add(gear);
@@ -48,11 +49,11 @@ namespace RiserAPI.Controllers
             if (id == null) return BadRequest();
             _context.Remove(_context.Gears.Find(id));
             _context.SaveChanges();
-            return Ok("Gear item deleted:" + id);
+            return Ok("GearItem item deleted:" + id);
         }
 
         [HttpPut]
-        public IActionResult Put([FromBody] Gear gear)
+        public IActionResult Put([FromBody] GearItem gear)
         {
             if (!ModelState.IsValid) return BadRequest();
             _context.Entry(gear).State = EntityState.Modified;
@@ -60,4 +61,5 @@ namespace RiserAPI.Controllers
             return Ok(gear);
         }
     }
+    
 }

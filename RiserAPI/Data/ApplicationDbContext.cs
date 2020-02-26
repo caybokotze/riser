@@ -25,6 +25,8 @@ namespace RiserAPI.Data
         //Apply Fluent API Configurations.
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new GearItemConfiguration());
+            
             modelBuilder.ApplyConfiguration(new JumpConfiguration());
             modelBuilder.ApplyConfiguration(new GearItemConfiguration());
         }
