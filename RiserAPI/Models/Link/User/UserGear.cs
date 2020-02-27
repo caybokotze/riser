@@ -29,10 +29,11 @@ namespace RiserAPI.Models.Link.User
             //
             builder.HasOne(o => o.User)
                 .WithMany(m => m.UserGearItems)
-                .HasForeignKey(fk => fk.UserId);
+                .HasForeignKey(fk => fk.UserId).OnDelete(DeleteBehavior.NoAction);
+            //
             builder.HasOne(o => o.GearItem)
                 .WithMany(m => m.UserGearItems)
-                .HasForeignKey(fk => fk.GearItemId);
+                .HasForeignKey(fk => fk.GearItemId).OnDelete(DeleteBehavior.NoAction);
         }
     }
 }

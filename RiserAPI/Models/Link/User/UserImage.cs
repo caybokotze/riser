@@ -20,17 +20,17 @@ namespace RiserAPI.Models.Link.User
         {
             builder.HasKey(k => new
             {
-                k.ImageId,
-                k.UserId
+                k.UserId,
+                k.ImageId
             });
 
             builder.HasOne(o => o.Image)
                 .WithMany(m => m.UserImages)
-                .HasForeignKey(fk => fk.ImageId);
+                .HasForeignKey(fk => fk.ImageId).OnDelete(DeleteBehavior.NoAction);
             //
             builder.HasOne(o => o.User)
                 .WithMany(m => m.UserImages)
-                .HasForeignKey(fk => fk.UserId);
+                .HasForeignKey(fk => fk.UserId).OnDelete(DeleteBehavior.NoAction);
         }
     }
 }

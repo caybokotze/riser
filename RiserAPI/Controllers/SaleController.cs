@@ -9,9 +9,9 @@ namespace RiserAPI.Controllers
     public class SaleController : Controller
     {
         private ApplicationDbContext _context;
-        public SaleController()
+        public SaleController(ApplicationDbContext context)
         {
-            _context = new ApplicationDbContext();
+            _context = context;
         }
         [HttpGet]
         public IActionResult Get()

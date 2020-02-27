@@ -26,13 +26,13 @@ namespace RiserAPI.Models.Link.Gear
             //One image could belong to many gear items.
             builder.HasOne(o => o.Image)
                 .WithMany(m => m.GearImages)
-                .HasForeignKey(fk => fk.ImageId);
+                .HasForeignKey(fk => fk.ImageId).OnDelete(DeleteBehavior.NoAction);
+            
             //One gear item could hae many gear images.
 
             builder.HasOne(o => o.GearItem)
                 .WithMany(m => m.GearImages)
-                .HasForeignKey(fk => fk.GearItemId);
-
+                .HasForeignKey(fk => fk.GearItemId).OnDelete(DeleteBehavior.NoAction);
         }
     }
 }

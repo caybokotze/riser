@@ -9,9 +9,9 @@ namespace RiserAPI.Controllers
     public class ImageController : Controller
     {
         private ApplicationDbContext _context;
-        public ImageController()
+        public ImageController(ApplicationDbContext context)
         {
-            _context = new ApplicationDbContext();
+            _context = context;
         }
     
         [HttpGet]

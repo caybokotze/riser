@@ -8,13 +8,12 @@ namespace RiserAPI.Models.Jump
     {
         //Jump
         public int JumpId { get; set; }
-        public Models.Jump.Jump Jump { get; set; }
+        public Jump Jump { get; set; }
         //Participant
         public int FromParticipantId { get; set; }
         public User.User FromUser { get; set; }
         //Participant
         public int ToParticipantId { get; set; }
-        public User.User ToUser { get; set; }
         //
         public DateTime Date { get; set; }
     }
@@ -32,16 +31,12 @@ namespace RiserAPI.Models.Jump
             //Map One to One => Jump > SignOff.
             builder.HasOne(h => h.Jump)
                 .WithOne(o => o.SignOffRequest)
-                .HasForeignKey<SignOffRequest>(f => f.JumpId);
+                .HasForeignKey<SignOffRequest>(f => f.JumpId).OnDelete(DeleteBehavior.NoAction);
             //Map One to One => From User.
             builder.HasOne(h => h.FromUser)
                 .WithOne(w => w.SignOffRequest)
-                .HasForeignKey<SignOffRequest>(f => f.FromParticipantId);
+                .HasForeignKey<SignOffRequest>(f => f.FromParticipantId).OnDelete(DeleteBehavior.NoAction);
             //Map One to One => To User.
-            builder.HasOne(h => h.ToUser)
-                .WithOne(w => w.SignOffRequest)
-                .HasForeignKey<SignOffRequest>(f => f.ToParticipantId);
-            
         }
     }
 }

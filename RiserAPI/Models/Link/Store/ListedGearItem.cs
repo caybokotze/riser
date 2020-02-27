@@ -28,11 +28,11 @@ namespace RiserAPI.Models.Link.Store
             //Listed Gear has one Gear Item.
             builder.HasOne(o => o.GearItem)
                 .WithMany(m => m.ListedGearItems)
-                .HasForeignKey(fk => fk.GearItemId);
+                .HasForeignKey(fk => fk.GearItemId).OnDelete(DeleteBehavior.NoAction);
             //Listed Gear has One sale listing.
             builder.HasOne(o => o.SaleListing)
                 .WithMany(m => m.ListedGearItems)
-                .HasForeignKey(fk => fk.SaleListingId);
+                .HasForeignKey(fk => fk.SaleListingId).OnDelete(DeleteBehavior.NoAction);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using RiserAPI.Models.Gear;
@@ -68,11 +69,10 @@ namespace RiserAPI.Models.User
         public IEnumerable<SignOffRequest> SignOffRequests { get; set; }
         public SignOffRequest SignOffRequest { get; set; }
         //Images
-        public IEnumerable<UserImage> Images { get; set; }
+        [NotMapped]
+        public IEnumerable<UserImage> UserImages { get; set; }
         //User Gear Items
         public IEnumerable<UserGear> UserGearItems { get; set; }
-
-        public IEnumerable<UserImage> UserImages { get; set; }
 
         public IEnumerable<Sale> Sales { get; set; }
         #endregion

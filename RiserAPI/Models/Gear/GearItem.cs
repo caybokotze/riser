@@ -38,7 +38,7 @@ namespace RiserAPI.Models.Gear
         public GearType GearType { get; set; }
         
         [ForeignKey("User")]
-        public string UserId { get; set; }
+        public int UserId { get; set; }
         public User.User User { get; set; }
         //
         #endregion

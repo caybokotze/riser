@@ -31,15 +31,15 @@ namespace RiserAPI.Models.Link.Jump
             //Note: ump has many jump gear items.
             builder.HasOne(o => o.Jump)
                 .WithMany(m => m.JumpGearItems)
-                .HasForeignKey(fk => fk.JumpId);
+                .HasForeignKey(fk => fk.JumpId).OnDelete(DeleteBehavior.NoAction);
             //Note: Gear item has many jump gear items.
             builder.HasOne(o => o.GearItem)
                 .WithMany(m => m.JumpGearItems)
-                .HasForeignKey(fk => fk.GearItemId);
+                .HasForeignKey(fk => fk.GearItemId).OnDelete(DeleteBehavior.NoAction);
             //Note: Rig has many jump gear items.
             builder.HasOne(h => h.Rig)
                 .WithMany(m => m.JumpGearItems)
-                .HasForeignKey(fk => fk.RigId);
+                .HasForeignKey(fk => fk.RigId).OnDelete(DeleteBehavior.NoAction);
         }
     }
 }

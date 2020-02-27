@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using RiserAPI.Models.Link.Gear;
@@ -18,6 +19,7 @@ namespace RiserAPI.Models.Gear
         public IEnumerable<GearImage> GearImages { get; set; }
         public IEnumerable<GearSaleImage> GearSaleImages { get; set; }
         public IEnumerable<JumpImage> JumpImages { get; set; }
+        [NotMapped]
         public IEnumerable<UserImage> UserImages { get; set; }
         #endregion
     }

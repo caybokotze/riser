@@ -8,9 +8,9 @@ namespace RiserAPI.Controllers
     public class SettingController : Controller
     {
         private ApplicationDbContext _context;
-        public SettingController()
+        public SettingController(ApplicationDbContext context)
         {
-            _context = new ApplicationDbContext();
+            _context = context;
         }
         
         [HttpGet]

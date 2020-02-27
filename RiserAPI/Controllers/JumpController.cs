@@ -10,9 +10,9 @@ namespace RiserAPI.Controllers
     public class JumpController : ControllerBase
     {
         private ApplicationDbContext _context;
-        public JumpController()
+        public JumpController(ApplicationDbContext context)
         {
-            _context = new ApplicationDbContext();
+            _context = context;
         }
         // GET
         [HttpGet]

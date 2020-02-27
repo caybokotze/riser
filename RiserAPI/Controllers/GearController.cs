@@ -13,16 +13,16 @@ namespace RiserAPI.Controllers
     public class GearController : Controller
     {
         private ApplicationDbContext _context;
-        public GearController()
+        public GearController(ApplicationDbContext context)
         {
-            _context = new ApplicationDbContext();
+            _context = context;
         }
 
         [HttpGet]
         [Route("all")]
         public IActionResult Get()
         {
-            return Ok(_context.Gears.ToList());
+            return Ok(_context.GearItems.ToList());
         }
 
         /* Get all the gear item for a specific user.*/
@@ -31,14 +31,14 @@ namespace RiserAPI.Controllers
         public IActionResult Get(string userId)
         {
             if (userId == null) return BadRequest();
-            return Ok(_context.Gears.SingleOrDefault(w => w.UserId.Equals(userId)));
+            return Ok(_context.GearItems.SingleOrDefault(w => w.UserId.Equals(userId)));
         }
 
         [HttpGet]
         public IActionResult Post([FromBody] GearItem gear)
         {
             if (!ModelState.IsValid) return BadRequest();
-            _context.Gears.Add(gear);
+            _context.GearItems.Add(gear);
             _context.SaveChanges();
             return Ok(gear);
         }
@@ -47,7 +47,7 @@ namespace RiserAPI.Controllers
         public IActionResult Delete(int? id)
         {
             if (id == null) return BadRequest();
-            _context.Remove(_context.Gears.Find(id));
+            _context.Remove(_context.GearItems.Find(id));
             _context.SaveChanges();
             return Ok("GearItem item deleted:" + id);
         }

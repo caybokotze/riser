@@ -10,9 +10,9 @@ namespace RiserAPI.Controllers
     public class SkydiveController : Controller
     {
         private ApplicationDbContext _context;
-        public SkydiveController()
+        public SkydiveController(ApplicationDbContext context)
         {
-            _context = new ApplicationDbContext();
+            _context = context;
         }
         
         [HttpGet]

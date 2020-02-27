@@ -11,7 +11,6 @@ namespace RiserAPI.Models.Store
         public User.User ToUser { get; set; }
         //Seller
         public int FromUserId { get; set; }
-        public User.User FromUser { get; set; }
         //Purchase Info
         public int PurchaseInfoId { get; set; }
         public PurchaseInfo PurchaseInfo { get; set; }
@@ -30,9 +29,9 @@ namespace RiserAPI.Models.Store
                 .WithMany(m => m.Sales)
                 .HasForeignKey(fk => fk.ToUserId);
             //Seller
-            builder.HasOne(o => o.FromUser)
-                .WithMany(m => m.Sales)
-                .HasForeignKey(fk => fk.FromUserId);
+//            builder.HasOne(o => o.FromUser)
+//                .WithMany(m => m.Sales)
+//                .HasForeignKey(fk => fk.FromUserId);
             //Purchase Info
             builder.HasOne(o => o.PurchaseInfo)
                 .WithMany(m => m.Sales)

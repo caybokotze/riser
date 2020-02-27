@@ -10,9 +10,9 @@ namespace RiserAPI.Controllers
     public class RigController : Controller
     {
         private ApplicationDbContext _context;
-        public RigController()
+        public RigController(ApplicationDbContext context)
         {
-            _context = new ApplicationDbContext();
+            _context = context;
         }
         
         [HttpGet]

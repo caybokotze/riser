@@ -31,15 +31,15 @@ namespace RiserAPI.Models.Link.Store
             //Gear Sale Image has one Image.
             builder.HasOne(o => o.Image)
                 .WithMany(m => m.GearSaleImages)
-                .HasForeignKey(fk => fk.ImageId);
+                .HasForeignKey(fk => fk.ImageId).OnDelete(DeleteBehavior.NoAction);
             //Gear sale image has one gear item.
             builder.HasOne(o => o.GearItem)
                 .WithMany(m => m.GearSaleImages)
-                .HasForeignKey(fk => fk.GearItemId);
+                .HasForeignKey(fk => fk.GearItemId).OnDelete(DeleteBehavior.NoAction);
             //Gear sale image has one sale listing.
             builder.HasOne(o => o.SaleListing)
                 .WithMany(m => m.GearSaleImages)
-                .HasForeignKey(fk => fk.SaleListingId);
+                .HasForeignKey(fk => fk.SaleListingId).OnDelete(DeleteBehavior.NoAction);
 
         }
     }

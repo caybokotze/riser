@@ -17,9 +17,9 @@ namespace RiserAPI.Controllers
     {
         private ApplicationDbContext _context;
         //private IContextService _context;
-        public AircraftController(/*IContextService context*/)
+        public AircraftController(ApplicationDbContext context)
         {
-            _context = new ApplicationDbContext();
+            _context = context;
         }
         
         [HttpGet]

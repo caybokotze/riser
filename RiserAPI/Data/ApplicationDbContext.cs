@@ -19,7 +19,7 @@ namespace RiserAPI.Data
 {
     public class ApplicationDbContext : DbContext
     {
-        public ApplicationDbContext() 
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
             
         }
@@ -27,10 +27,12 @@ namespace RiserAPI.Data
         //Apply Fluent API Configurations.
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //Gear
             modelBuilder.ApplyConfiguration(new GearItemConfiguration());
             modelBuilder.ApplyConfiguration(new GearTypeConfiguration());
             modelBuilder.ApplyConfiguration(new ImageConfiguration());
             modelBuilder.ApplyConfiguration(new RigConfiguration());
+            //Jump
             modelBuilder.ApplyConfiguration(new AircraftConfiguration());
             modelBuilder.ApplyConfiguration(new BaseJumpConfiguration());
             modelBuilder.ApplyConfiguration(new BaseJumpTypeConfiguration());
@@ -41,29 +43,40 @@ namespace RiserAPI.Data
             modelBuilder.ApplyConfiguration(new SkydiveDisciplineConfiguration());
             modelBuilder.ApplyConfiguration(new SkydiveTypeConfiguration());
             modelBuilder.ApplyConfiguration(new TunnelSessionConfiguration());
+
+            #region Linking Tables
+            //Gear
             modelBuilder.ApplyConfiguration(new GearImageConfiguration());
             modelBuilder.ApplyConfiguration(new RigCollectionConfiguration());
             modelBuilder.ApplyConfiguration(new RigCollectionTypeConfiguration());
+            //Jump
             modelBuilder.ApplyConfiguration(new JumpGearConfiguration());
             modelBuilder.ApplyConfiguration(new JumpImageConfiguration());
             modelBuilder.ApplyConfiguration(new JumpMalfunctionConfiguration());
             modelBuilder.ApplyConfiguration(new JumpParticipantConfiguration());
             modelBuilder.ApplyConfiguration(new SignOffConfiguration());
+            //Store
             modelBuilder.ApplyConfiguration(new GearSaleImageConfiguration());
             modelBuilder.ApplyConfiguration(new ListedGearConfiguration());
+            //User
             modelBuilder.ApplyConfiguration(new UserGearConfiguration());
-            modelBuilder.ApplyConfiguration(new UserImageConfiguration());
+            //modelBuilder.ApplyConfiguration(new UserImageConfiguration());
+            
+            #endregion
+            
+            //Store
             modelBuilder.ApplyConfiguration(new PurchaseInfoConfiguration());
             modelBuilder.ApplyConfiguration(new SaleConfiguration());
             modelBuilder.ApplyConfiguration(new SaleListingConfiguration());
+            //User
             modelBuilder.ApplyConfiguration(new CommentConfiguration());
-            //todo: license type configuration
+            modelBuilder.ApplyConfiguration(new LicenseTypeConfiguration());
             modelBuilder.ApplyConfiguration(new SettingConfiguration());
             modelBuilder.ApplyConfiguration(new UserConfiguration());
         }
         
         //Gear
-        public DbSet<GearItem> GearsItems { get; set; }
+        public DbSet<GearItem> GearItems { get; set; }
         public DbSet<GearType> GearTypes { get; set; }
         public DbSet<Image> Images { get; set; }
         public DbSet<Rig> Rigs { get; set; }
@@ -105,7 +118,7 @@ namespace RiserAPI.Data
         public DbSet<ListedGearItem> ListedGearItems { get; set; }
         //User
         public DbSet<UserGear> UserGears { get; set; }
-        public DbSet<UserImage> UserImages { get; set; }
+        //public DbSet<UserImage> UserImages { get; set; }
         //
         #endregion
     }

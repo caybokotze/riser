@@ -9,9 +9,9 @@ namespace RiserAPI.Controllers
     public class TunnelController : Controller
     {
         private ApplicationDbContext _context;
-        public TunnelController()
+        public TunnelController(ApplicationDbContext context)
         {
-            _context = new ApplicationDbContext();
+            _context = context;
         }
         
         [HttpGet]

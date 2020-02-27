@@ -13,9 +13,9 @@ namespace RiserAPI.Controllers
     public class CommentController : Controller
     {
         private ApplicationDbContext _context;
-        public CommentController()
+        public CommentController(ApplicationDbContext context)
         {
-            _context = new ApplicationDbContext();
+            _context = context;
         }
         
         [Route("all")]

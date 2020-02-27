@@ -26,11 +26,11 @@ namespace RiserAPI.Models.Link.Jump
 
             builder.HasOne(o => o.User)
                 .WithMany(m => m.JumpParticipants)
-                .HasForeignKey(fk => fk.UserId);
+                .HasForeignKey(fk => fk.UserId).OnDelete(DeleteBehavior.NoAction);
 
             builder.HasOne(o => o.Jump)
                 .WithMany(m => m.JumpParticipants)
-                .HasForeignKey(fk => fk.JumpId);
+                .HasForeignKey(fk => fk.JumpId).OnDelete(DeleteBehavior.NoAction);
         }
     }
 }
