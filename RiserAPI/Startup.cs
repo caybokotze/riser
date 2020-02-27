@@ -56,7 +56,7 @@ namespace RiserAPI
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "api/{controller=User}/{action=Get}/{id?}");
                 endpoints.MapRazorPages();
             });
         }

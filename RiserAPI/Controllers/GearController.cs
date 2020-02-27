@@ -34,7 +34,7 @@ namespace RiserAPI.Controllers
             return Ok(_context.GearItems.SingleOrDefault(w => w.UserId.Equals(userId)));
         }
 
-        [HttpGet]
+        [HttpPost]
         public IActionResult Post([FromBody] GearItem gear)
         {
             if (!ModelState.IsValid) return BadRequest();

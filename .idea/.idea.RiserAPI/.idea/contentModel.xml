@@ -77,8 +77,8 @@
           <e p="Repository" t="Include" />
         </e>
         <e p="Migrations" t="Include">
-          <e p="20200227135813_IntitialMigration.cs" t="Include" />
-          <e p="20200227135813_IntitialMigration.Designer.cs" t="Include" />
+          <e p="20200227140833_InitialMigration.cs" t="Include" />
+          <e p="20200227140833_InitialMigration.Designer.cs" t="Include" />
           <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="Models" t="Include">

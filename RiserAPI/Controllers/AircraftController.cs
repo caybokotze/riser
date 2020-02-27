@@ -24,15 +24,16 @@ namespace RiserAPI.Controllers
         
         [HttpGet]
         [Route("all")]
+        [Route("")]
         public IActionResult Get()
         {
-            return Ok(_context.Aircraft);
+            return Ok(_context.Aircraft.ToList());
         }
         
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public IActionResult Get(int? id)
         {
-            if (id != 0)
+            if (id != null)
             {
                 return Ok(_context.Aircraft.Find(id));
             }
@@ -44,7 +45,9 @@ namespace RiserAPI.Controllers
         {
             if (ModelState.IsValid)
             {
-                return Ok(_context.Aircraft.Add(aircraft));
+                _context.Aircraft.Add(aircraft);
+                _context.SaveChanges();
+                return Ok(aircraft);
             }
 
             return BadRequest();
